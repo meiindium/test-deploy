@@ -34,15 +34,16 @@ const App = () => {
       switch (message.toLowerCase()) {
         case 'hello':
         case 'hi':
-          return 'sollu bro';
+          return 'sollu row';
+          case 'ena bro':
+          return 'ethana type pannu bro';
         case 'how are you?':
           return 'Ena bro Soldra ne';
         case 'what is your name':
           return 'ni-hey sollu bro';
         default:
-          // return 'I am sorry, I didn\'t get you. Please provide valid input or try again.';
-      return 'Bro na onnu solla va';
-        }
+          return 'Bro na onnu solla va bro';
+      }
     }
   };
 
@@ -69,9 +70,6 @@ const App = () => {
     transition: 'transform 400ms',
     transformStyle: 'preserve-3d',
     transform: 'rotateX(15deg) rotateY(-20deg)',
-    // perspective: '500px'
-
-
   };
   
   const shadowInputStyle = {
@@ -125,31 +123,31 @@ const App = () => {
         </div>
         <div className="card__content">
           <div>
-            
             {messages.map((msg, index) => (
               <div key={index}>
-                {msg.sender === 'user' ? <p style={{color:'yellow'}}>User: {msg.text}</p> : <p style={{color:'lime'}}>Bot: {msg.text}</p>}
+                {msg.sender === 'user' ? (
+                  <p style={{ color: 'yellow' }}>User: {msg.text}</p>
+                ) : msg.text === 'Bro na onnu solla va bro' ? (
+                  <p style={{ color: 'red' }}>Bot: {msg.text}</p>
+                ) : (
+                  <p style={{ color: 'lime' }}> Bot: {msg.text}</p>
+                )}
               </div>
             ))}
           </div>
           <form onSubmit={handleSubmit}  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-             
-             <div style={inputContainerStyle}>
-     <div style={shadowInputStyle}></div>
-     <button style={inputButtonShadowStyle}>
-       <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="20px" width="20px">
-         <path d="M4 9a5 5 0 1110 0A5 5 0 014 9zm5-7a7 7 0 104.2 12.6.999.999 0 00.093.107l3 3a1 1 0 001.414-1.414l-3-3a.999.999 0 00-.107-.093A7 7 0 009 2z" fillRule="evenodd" fill="#17202A"></path>
-       </svg>
-     </button>
-     <input  type="text" name="userInput" style={inputSearchStyle} placeholder="What do you want to search?" />
-   </div>
-             
-           </form>
+            <div style={inputContainerStyle}>
+              <div style={shadowInputStyle}></div>
+              <button style={inputButtonShadowStyle}>
+                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="20px" width="20px">
+                  <path d="M4 9a5 5 0 1110 0A5 5 0 014 9zm5-7a7 7 0 104.2 12.6.999.999 0 00.093.107l3 3a1 1 0 001.414-1.414l-3-3a.999.999 0 00-.107-.093A7 7 0 009 2z" fillRule="evenodd" fill="#17202A"></path>
+                </svg>
+              </button>
+              <input  type="text" name="userInput" style={inputSearchStyle} placeholder="What do you want to search?" />
+            </div>
+          </form>
         </div>
-        
       </div>
-   
-      
     </div>
   );
 };
