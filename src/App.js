@@ -28,6 +28,8 @@ const App = () => {
         return "I'm good, thanks for asking.";
       case "?":
         return "What?";
+        case "kj":
+        return "Kajmol";
       default:
         return "Please provide more info.";
     }
