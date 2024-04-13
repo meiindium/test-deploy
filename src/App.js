@@ -31,19 +31,34 @@ const App = () => {
       }
     } else {
       // Define static responses based on user input
-      switch (message.toLowerCase()) {
+      // switch (message.toLowerCase()) {  //   babaji chat
+      //   case 'hello':
+      //   case 'hi':
+      //     return 'yup';
+      //     case 'ena bro':
+      //     return 'ethana type pannu bro';
+      //   case 'how are you?':
+      //     return 'Ena bro Soldra ne';
+      //   case 'what is your name':
+      //     return 'ni-hey sollu bro';
+      //   default:
+      //     return 'Bro na onnu solla va bro';
+      // }
+
+      switch (userInput.toLowerCase()) {
         case 'hello':
         case 'hi':
-          return 'sollu row';
-          case 'ena bro':
-          return 'ethana type pannu bro';
-        case 'how are you?':
-          return 'Ena bro Soldra ne';
+          return 'How can I help you?';
         case 'what is your name':
-          return 'ni-hey sollu bro';
+          return 'Mini Bot';
+        case 'how are you?':
+          return 'I\'m good, thanks for asking.';
+        case '?':
+          return 'What?';
         default:
-          return 'Bro na onnu solla va bro';
+          return 'Please provide more info.';
       }
+      
     }
   };
 
