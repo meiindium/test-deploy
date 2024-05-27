@@ -75,12 +75,23 @@ const API = {
           case 'your name':
             resolve('ni-hey sollu bro');
             break;
+            case 'balaji':
+              case 'babaji':
+                case 'who is balaji':
+                  case 'who is babaji':
+                    case 'who is balaji?':
+                  case 'who is babaji?':
+              resolve('Founder of Babaji-GPT');
+
+              case 'niharika':
+                resolve('VJ fav');              break;
           case 'calculator':
           case 'calc':
           case 'math':
             resolve('Enter the expression you want to calculate.');
             break;
           default:
+          
             // Check if the message starts with a mathematical expression
             if (/^[0-9+\-*/.() ]+$/.test(message)) {
               try {

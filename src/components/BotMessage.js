@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Loader from "./Loader";
+import BabajiIcon from "../assets/Prompt_Img.jpg";
 
 export default function BotMessage({ fetchMessage }) {
   const [isLoading, setLoading] = useState(true);
@@ -16,7 +17,26 @@ export default function BotMessage({ fetchMessage }) {
 
   return (
     <div className="message-container">
-      <div className="bot-message">{isLoading ? <Loader /> : message}</div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "flex-start",
+          marginLeft: "10px",
+
+          alignItems: "center",
+        }}
+      >
+        <img
+          alt="Babaji Icon Missing"
+          style={{ borderRadius: 50 }}
+          src={BabajiIcon}
+          width={25}
+          height={25}
+        />
+
+        <div className="bot-message">{isLoading ? <Loader /> : message}</div>
+      </div>
     </div>
   );
 }
