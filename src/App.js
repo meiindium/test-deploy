@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Index from "./components/Index";
+import IncomingCalling from "./components/IncomingCall/IncomingCalling";
 
 const App = () => {
   return (
@@ -8,10 +9,10 @@ const App = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        
       }}
     >
       <Index />
+      <IncomingCalling />
     </div>
   );
 };

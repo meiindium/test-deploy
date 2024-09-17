@@ -75,27 +75,27 @@ const API = {
           case 'your name':
             resolve('ni-hey sollu bro');
             break;
-            case 'balaji':
-              case 'babaji':
-                case 'who is balaji':
-                  case 'who is babaji':
-                    case 'who is balaji?':
-                  case 'who is babaji?':
-              resolve('Founder of Babaji-GPT');
-
-              case 'niharika':
-                resolve('VJ fav');              break;
+          case 'balaji':
+          case 'babaji':
+          case 'who is balaji':
+          case 'who is babaji':
+          case 'who is balaji?':
+          case 'who is babaji?':
+            resolve('Founder of Babaji-GPT');
+            break;
+          case 'niharika':
+            case 'niha':
+            resolve('VJ fav');
+            break;
           case 'calculator':
           case 'calc':
           case 'math':
             resolve('Enter the expression you want to calculate.');
             break;
           default:
-          
-            // Check if the message starts with a mathematical expression
             if (/^[0-9+\-*/.() ]+$/.test(message)) {
               try {
-                const result = eval(message); // Warning: Using eval is not recommended in production code
+                const result = eval(message);
                 resolve(` ${result} bro`);
               } catch (error) {
                 resolve('Sorry, I couldn\'t calculate that.');
@@ -104,7 +104,7 @@ const API = {
               resolve('Bro na onnu solla va bro');
             }
         }
-      }, 2000); // Adjust timeout as needed
+      }, 2000);
     });
   },
 };
