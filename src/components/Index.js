@@ -12,7 +12,9 @@ import API from "./MiniBotPrompt";
 import "./styles.css";
 import Header from "./Header";
 
-function MiniBotPrompt() {
+// function MiniBotPrompt() {
+  function MiniBotPrompt({ onCall }) {  // Added onCall prop
+
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
@@ -35,6 +37,12 @@ function MiniBotPrompt() {
         fetchMessage={async () => await API.GetChatbotResponse(text)}
       />
     );
+
+   // Check if the text is "call", then trigger the onCall event
+   if (text.toLowerCase() === "call") {
+    onCall(true); // Show the call card
+  }
+
     setMessages(newMessages);
   };
 

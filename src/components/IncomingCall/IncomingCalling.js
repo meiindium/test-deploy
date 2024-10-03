@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import userImg from "../../assets/Prompt_Img.jpg";
 import "./IncomingCalling.css";
 
-const IncomingCalling = () => {
+const IncomingCalling = ({ endCall }) => {  // Added endCall prop
   const callerProfileBorder = "black";
 
   const [seconds, setSeconds] = useState(0);
@@ -28,10 +28,11 @@ const IncomingCalling = () => {
     setCallAccepted(true);
   };
 
-  const endCall = () => {
+  const endCallHandler = () => {
     setIsCounting(false);
     setSeconds(0);
     setCallAccepted(false);
+    endCall(false);  // Hide the call card when the call ends
   };
 
   const CallerIcon = (
@@ -72,9 +73,9 @@ const IncomingCalling = () => {
             backgroundColor: "#80808024",
             border: "black 1px solid",
             borderRadius: 5,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
+            position: "absolute",
+            right: 10,
+            bottom: 10,
             boxShadow: "0px 3px 15px #222",
           }}
         >
@@ -116,7 +117,9 @@ const IncomingCalling = () => {
               alignItems: "center",
             }}
           >
-            <div className="Reject-Calling-Button">{CallerIcon}</div>
+            <div className="Reject-Calling-Button" onClick={endCallHandler}>
+              {CallerIcon}
+            </div>
 
             <div className="Accept-Calling-Button" onClick={startCall}>
               {CallerIcon}
@@ -131,9 +134,9 @@ const IncomingCalling = () => {
             backgroundColor: "#80808024",
             border: "black 1px solid",
             borderRadius: 5,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
+            position: "absolute",
+            right: 10,
+            bottom: 10,
             boxShadow: "0px 3px 15px #222",
           }}
         >
@@ -166,7 +169,6 @@ const IncomingCalling = () => {
           >
             <h3>Balaji K</h3>
             {formatTime(seconds)}
-            {/* <MicWaveAnimation /> */}
           </div>
 
           <div
@@ -177,7 +179,7 @@ const IncomingCalling = () => {
               alignItems: "center",
             }}
           >
-            <div className="Reject-Calling-Button" onClick={endCall}>
+            <div className="Reject-Calling-Button" onClick={endCallHandler}>
               {CallerIcon}
             </div>
           </div>

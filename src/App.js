@@ -3,6 +3,13 @@ import Index from "./components/Index";
 import IncomingCalling from "./components/IncomingCall/IncomingCalling";
 
 const App = () => {
+  const [showCall, setShowCall] = useState(false);
+
+  // Handle the start and end of the call
+  const handleCall = (isCallActive) => {
+    setShowCall(isCallActive);  // Toggle call visibility
+  };
+
   return (
     <div
       style={{
@@ -11,25 +18,12 @@ const App = () => {
         alignItems: "center",
       }}
     >
-      <Index />
-      <IncomingCalling />
+      {/* Pass handleCall to the MiniBotPrompt component */}
+      <Index onCall={handleCall} />
+      {/* Display IncomingCalling component only when showCall is true */}
+      {showCall && <IncomingCalling endCall={handleCall} />} {/* Pass endCall prop */}
     </div>
   );
 };
 
 export default App;
-
-// Define static responses based on user input
-// switch (message.toLowerCase()) {  //   babaji chat
-//   case 'hello':
-//   case 'hi':
-//     return 'yup';
-//     case 'ena bro':
-//     return 'ethana type pannu bro';
-//   case 'how are you?':
-//     return 'Ena bro Soldra ne';
-//   case 'what is your name':
-//     return 'ni-hey sollu bro';
-//   default:
-//     return 'Bro na onnu solla va bro';
-// }
