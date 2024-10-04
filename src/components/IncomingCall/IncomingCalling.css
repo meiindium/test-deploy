@@ -2,8 +2,9 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  border: 1px solid #00ca4e; 
-  color: #00ca4e;
+  border: 1px solid #28ff28; 
+  background-color: #28ff28;
+  box-shadow: 0px 3px 10px #28ff28;
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -11,21 +12,28 @@
 }
 
 .Accept-Calling-Button:hover {
-  box-shadow: 0px 3px 10px #00ca4e;
+  box-shadow: 0px 8px 20px #28ff28;
+  background-color: #28ff28;
+  color: #fff;
 }
 
 .Reject-Calling-Button {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    border: 1px solid #ff605c; 
-    color: #ff605c;
+    border: 1px solid #ff2828; 
+    box-shadow: 0px 3px 10px #ff2828;
+    color: #ff2828;
     display: flex;
     justify-content: center;
     cursor: pointer;
     align-items: center;
+    rotate: 135deg;
   }
   
   .Reject-Calling-Button:hover {
-    box-shadow: 0px 3px 10px #ff605c;
+    box-shadow:0px 8px 20px #ff605c;
+    background-color: #ff2828;
+    color: #fff;
+    
   }
