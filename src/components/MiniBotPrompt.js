@@ -63,7 +63,9 @@ const API = {
           case ' ':
             resolve('ethana type pannu bro');
             case 'lux':
-            resolve('jr')
+            resolve('jr');
+            case 'swe':
+              resolve('jr2')
             break;
           case 'how are you':
           case 'how are you?':
